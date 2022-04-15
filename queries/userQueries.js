@@ -12,12 +12,13 @@ const doesUserExist = async (email) => {
     }
 }
 
-const addUser = async (name, email, phone, password) => {
+const addUser = async (name, email, password) => {
+    console.log (name, email, password);
     try {
         await db.query (
             `
-                INSERT INTO users (id, name, email, password)
-                VALUES ('12', '${name}', '${email}', '${password}');
+                INSERT INTO users (name, email, password)
+                VALUES ('${name}', '${email}', '${password}');
             `
         )
     } catch (err) {
