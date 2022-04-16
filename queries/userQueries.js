@@ -13,14 +13,22 @@ const doesUserExist = async (email) => {
 }
 
 const addUser = async (name, email, password) => {
-    console.log (name, email, password);
     try {
         await db.query (
             `
                 INSERT INTO users (name, email, password)
                 VALUES ('${name}', '${email}', '${password}');
             `
-        )
+        ) 
+    } catch (err) {
+        return err;
+    }
+}
+
+const getUser = async (email) => {
+    try {
+        const result = await db.query(`SELECT * FROM users WHERE email='${email}'`);
+        return result;
     } catch (err) {
         return err;
     }
@@ -33,4 +41,5 @@ module.exports =
     { 
         doesUserExist,
         addUser,
+        getUser,
     };
