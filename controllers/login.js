@@ -21,7 +21,7 @@ exports.login = async (req, res) => {
                         },
                         process.env.SECRET_KEY
                     );
-                    res.status(200).json({ message: 'USER signed in!', token })
+                    res.status(200).json({ message: 'USER signed in!', user: user[0].name, email: user[0].email, token })
                 } else {
                     if (result != true)
                       res.status(400).json({
