@@ -4,7 +4,7 @@ This backend will create new users and store them in a PSQL db
 and also handle authorize login requests from a frontend, returning a signed JWT.
 
 
-##Dependencies
+## Dependencies
     - pg-promise
     - express
     - bcrypt
@@ -13,7 +13,7 @@ and also handle authorize login requests from a frontend, returning a signed JWT
     - cors
 
 
-Paths - 
+## Paths - 
 
 - /user/register - registers a new user
     - takes a json body in the format
@@ -31,3 +31,10 @@ Paths -
         }
     - returns a signed jwt
 
+## SQL Table Structure
+
+Columns - 
+    - id
+    - name
+    - email
+    - password
