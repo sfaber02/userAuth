@@ -34,7 +34,7 @@ and also handle authorize login requests from a frontend, returning a signed JWT
 ## SQL Table Structure
 
 Columns - 
-    - id
-    - name
-    - email
-    - password
+    - id SERIAL PRIMARY KEY
+    - name text NOT NULL
+    - email text NOT NULL UNIQUE
+    - password varchar NOT NULL
