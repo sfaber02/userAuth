@@ -38,3 +38,17 @@ Columns -
     - name text NOT NULL
     - email text NOT NULL UNIQUE
     - password varchar NOT NULL
+
+
+## Notes
+
+Will require a .env with the following variables
+
+PG_HOST= db address
+PG_PORT= db port
+PG_DATABASE= db name
+PG_USER= db username
+PG_PASSWORD= db password
+
+
+SECRET_KEY= secret key for bcrypt
